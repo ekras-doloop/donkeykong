@@ -1,0 +1,21 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite it as below."
+authors:
+- family-names: "Rastogi"
+  given-names: "Gaurav"
+  email: rustey@gmail.com
+  orcid: ""
+title: "DonkeyKong: Distributed Collection, Local Intelligence"
+version: 0.1.0
+doi: ""
+date-released: 2026-01-13
+url: "https://github.com/ekras-doloop/donkeykong"
+abstract: "DonkeyKong implements the 'Kong in the Loop' pattern for preventing LLM hallucination at scale. By separating mechanical collection (cannot hallucinate) from intelligent analysis (LLMs) and adding adversarial validation with cheap local LLMs, it achieves 85% cost reduction while eliminating hallucination in data pipelines."
+keywords:
+  - LLM validation
+  - adversarial validation
+  - distributed systems
+  - hallucination prevention
+  - Kong in the Loop
+license: MIT
+repository-code: "https://github.com/ekras-doloop/donkeykong"
