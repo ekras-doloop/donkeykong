@@ -1,0 +1,133 @@
+# Wikipedia Articles for Quality Assessment
+# 100 diverse articles across different topics
+# Lines starting with # are comments
+
+# Technology
+Python_programming_language
+JavaScript
+Rust_programming_language
+Machine_learning
+Artificial_intelligence
+Deep_learning
+Natural_language_processing
+Computer_vision
+Blockchain
+Cryptocurrency
+Bitcoin
+Ethereum
+Cloud_computing
+DevOps
+Kubernetes
+Docker_software
+Linux
+Git
+GitHub
+Open_source_software
+
+# Science
+Quantum_mechanics
+General_relativity
+DNA
+Evolution
+Climate_change
+Photosynthesis
+Black_hole
+Big_Bang
+Periodic_table
+CRISPR_gene_editing
+
+# History
+World_War_II
+American_Revolution
+French_Revolution
+Industrial_Revolution
+Renaissance
+Ancient_Rome
+Ancient_Egypt
+Byzantine_Empire
+Mongol_Empire
+Cold_War
+
+# Geography
+Pacific_Ocean
+Amazon_rainforest
+Sahara
+Mount_Everest
+Grand_Canyon
+Great_Barrier_Reef
+Antarctica
+Amazon_River
+Mediterranean_Sea
+Himalayas
+
+# Arts & Culture
+Leonardo_da_Vinci
+Pablo_Picasso
+William_Shakespeare
+Jazz
+Hip_hop_music
+Impressionism
+Surrealism
+Renaissance_art
+Classical_music
+Film_noir
+
+# Philosophy
+Plato
+Aristotle
+Immanuel_Kant
+Friedrich_Nietzsche
+Existentialism
+Stoicism
+Buddhism
+Confucianism
+Utilitarianism
+Social_contract
+
+# Economics & Business
+Capitalism
+Stock_market
+Federal_Reserve
+Gross_domestic_product
+Supply_and_demand
+Inflation
+Monopoly
+Free_trade
+Venture_capital
+Silicon_Valley
+
+# Medicine & Health
+Vaccine
+Cancer
+Heart_disease
+Diabetes
+Mental_health
+Antibiotics
+Surgery
+Epidemiology
+Public_health
+World_Health_Organization
+
+# Sports
+Olympic_Games
+FIFA_World_Cup
+Basketball
+Tennis
+Golf
+Marathon
+Chess
+Esports
+Tour_de_France
+Super_Bowl
+
+# Space
+NASA
+SpaceX
+International_Space_Station
+Mars
+Moon
+Solar_System
+Milky_Way
+Hubble_Space_Telescope
+James_Webb_Space_Telescope
+Exoplanet

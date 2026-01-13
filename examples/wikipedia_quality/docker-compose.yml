@@ -1,0 +1,108 @@
+version: '3.8'
+
+services:
+  redis:
+    image: redis:7-alpine
+    ports:
+      - "6379:6379"
+    volumes:
+      - redis_data:/data
+    networks:
+      - donkeykong
+
+  # Worker 1: Articles 0-33
+  worker-1:
+    build: 
+      context: ../..
+      dockerfile: examples/wikipedia_quality/Dockerfile
+    environment:
+      - WORKER_ID=1
+      - START_INDEX=0
+      - END_INDEX=34
+      - REDIS_URL=redis://redis:6379
+      - RATE_LIMIT=3.0
+      - OLLAMA_URL=http://host.docker.internal:11434
+      - OLLAMA_MODEL=llama3.2
+    volumes:
+      - ./data:/data
+      - ./logs:/logs
+      - ./backups:/backups
+    depends_on:
+      - redis
+    networks:
+      - donkeykong
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+
+  # Worker 2: Articles 34-67
+  worker-2:
+    build:
+      context: ../..
+      dockerfile: examples/wikipedia_quality/Dockerfile
+    environment:
+      - WORKER_ID=2
+      - START_INDEX=34
+      - END_INDEX=67
+      - REDIS_URL=redis://redis:6379
+      - RATE_LIMIT=3.0
+      - OLLAMA_URL=http://host.docker.internal:11434
+      - OLLAMA_MODEL=llama3.2
+    volumes:
+      - ./data:/data
+      - ./logs:/logs
+      - ./backups:/backups
+    depends_on:
+      - redis
+    networks:
+      - donkeykong
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+
+  # Worker 3: Articles 67-100
+  worker-3:
+    build:
+      context: ../..
+      dockerfile: examples/wikipedia_quality/Dockerfile
+    environment:
+      - WORKER_ID=3
+      - START_INDEX=67
+      - END_INDEX=100
+      - REDIS_URL=redis://redis:6379
+      - RATE_LIMIT=3.0
+      - OLLAMA_URL=http://host.docker.internal:11434
+      - OLLAMA_MODEL=llama3.2
+    volumes:
+      - ./data:/data
+      - ./logs:/logs
+      - ./backups:/backups
+    depends_on:
+      - redis
+    networks:
+      - donkeykong
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+
+  # Progress monitor
+  monitor:
+    build:
+      context: ../..
+      dockerfile: examples/wikipedia_quality/Dockerfile
+    environment:
+      - REDIS_URL=redis://redis:6379
+      - EXPECTED_WORKERS=3
+      - REPORT_INTERVAL=10
+    volumes:
+      - ./data:/data
+      - ./reports:/reports
+    depends_on:
+      - redis
+    networks:
+      - donkeykong
+    command: python -m donkeykong.core.monitor
+
+networks:
+  donkeykong:
+    driver: bridge
+
+volumes:
+  redis_data:
