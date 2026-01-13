@@ -1,0 +1,48 @@
+{
+  "benchmark_info": {
+    "date": "2026-01-13",
+    "articles_processed": 50,
+    "ollama_model": "llama3.2",
+    "workers": 3,
+    "environment": "MacOS 14.2, Docker 24.0.7"
+  },
+  "results": {
+    "collection_success_rate": 0.96,
+    "validation_pass_rate": 0.82,
+    "flagged_for_review": 0.18,
+    "processing_time_seconds": 187,
+    "avg_article_length": 4523,
+    "validation_time_per_article_ms": 245
+  },
+  "validation_examples": {
+    "high_quality_pass": {
+      "title": "Quantum_computing",
+      "quality_score": 0.92,
+      "completeness": 0.95,
+      "consistency": 0.89,
+      "issues_found": []
+    },
+    "flagged_for_review": {
+      "title": "List_of_Pokemon",
+      "quality_score": 0.61,
+      "completeness": 0.45,
+      "consistency": 0.77,
+      "issues_found": [
+        "Article appears to be primarily lists/tables",
+        "Low prose-to-data ratio",
+        "Minimal analysis content"
+      ]
+    }
+  },
+  "adversarial_questions_generated": [
+    "Why is completeness only 45% when all sections loaded?",
+    "What specific content is missing that impacts quality?",
+    "How would adding 2 more paragraphs change the score?"
+  ],
+  "performance_vs_baseline": {
+    "baseline_method": "regex_only",
+    "baseline_accuracy": 0.53,
+    "kong_accuracy": 0.82,
+    "improvement": "54.7%"
+  }
+}

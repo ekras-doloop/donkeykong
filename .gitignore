@@ -101,4 +101,6 @@ secrets.yml
 .secrets/
 
 # Benchmark outputs
-benchmark_results*.json
+benchmark_results_*.json
+# But allow the reference benchmark
+!examples/wikipedia_quality/benchmark_results.json
