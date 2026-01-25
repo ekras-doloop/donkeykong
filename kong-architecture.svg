@@ -1,0 +1,137 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 900">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0f172a"/>
+      <stop offset="100%" style="stop-color:#1e293b"/>
+    </linearGradient>
+    <linearGradient id="kongGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#f59e0b"/>
+      <stop offset="100%" style="stop-color:#d97706"/>
+    </linearGradient>
+    <linearGradient id="claudeGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#8b5cf6"/>
+      <stop offset="100%" style="stop-color:#7c3aed"/>
+    </linearGradient>
+    <linearGradient id="workerGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#64748b"/>
+      <stop offset="100%" style="stop-color:#475569"/>
+    </linearGradient>
+    <linearGradient id="rerunGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#22c55e"/>
+      <stop offset="100%" style="stop-color:#16a34a"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Background -->
+  <rect width="800" height="900" fill="url(#bgGrad)"/>
+
+  <!-- Title -->
+  <text x="400" y="45" text-anchor="middle" fill="#f8fafc" font-family="system-ui, -apple-system, sans-serif" font-size="26" font-weight="700">"Kong in the Loop" Architecture</text>
+
+  <!-- PHASE 1 -->
+  <text x="60" y="95" fill="#94a3b8" font-family="system-ui, sans-serif" font-size="13" font-weight="600" letter-spacing="0.05em">PHASE 1: MECHANICAL COLLECTION</text>
+  <text x="355" y="95" fill="#64748b" font-family="system-ui, sans-serif" font-size="13">(Donkeys — no LLM)</text>
+
+  <!-- Workers -->
+  <g>
+    <rect x="120" y="120" width="120" height="60" rx="8" fill="url(#workerGrad)"/>
+    <text x="180" y="148" text-anchor="middle" fill="#f8fafc" font-family="system-ui, sans-serif" font-size="14" font-weight="600">Worker 1</text>
+    <text x="180" y="168" text-anchor="middle" fill="#cbd5e1" font-family="monospace" font-size="11">(scripts)</text>
+  </g>
+  <g>
+    <rect x="260" y="120" width="120" height="60" rx="8" fill="url(#workerGrad)"/>
+    <text x="320" y="148" text-anchor="middle" fill="#f8fafc" font-family="system-ui, sans-serif" font-size="14" font-weight="600">Worker 2</text>
+    <text x="320" y="168" text-anchor="middle" fill="#cbd5e1" font-family="monospace" font-size="11">(scripts)</text>
+  </g>
+  <g>
+    <rect x="400" y="120" width="120" height="60" rx="8" fill="url(#workerGrad)"/>
+    <text x="460" y="148" text-anchor="middle" fill="#f8fafc" font-family="system-ui, sans-serif" font-size="14" font-weight="600">Worker N</text>
+    <text x="460" y="168" text-anchor="middle" fill="#cbd5e1" font-family="monospace" font-size="11">(scripts)</text>
+  </g>
+
+  <!-- Arrow to Raw Data -->
+  <path d="M 520 150 L 560 150" stroke="#64748b" stroke-width="2" fill="none"/>
+  <polygon points="560,150 552,145 552,155" fill="#64748b"/>
+  
+  <!-- Raw Data label -->
+  <text x="575" y="145" fill="#e2e8f0" font-family="system-ui, sans-serif" font-size="14" font-weight="500">Raw Data</text>
+  <text x="575" y="163" fill="#94a3b8" font-family="system-ui, sans-serif" font-size="12">(real, not invented)</text>
+
+  <!-- Connector lines from workers -->
+  <path d="M 180 180 L 180 200 L 320 200 L 320 180" stroke="#475569" stroke-width="2" fill="none"/>
+  <path d="M 320 180 L 320 200 L 460 200 L 460 180" stroke="#475569" stroke-width="2" fill="none"/>
+  <path d="M 320 200 L 320 220" stroke="#475569" stroke-width="2" fill="none"/>
+  <polygon points="320,230 315,220 325,220" fill="#475569"/>
+
+  <!-- Kong Data Validation Box -->
+  <rect x="100" y="245" width="440" height="130" rx="10" fill="#1e293b" stroke="#f59e0b" stroke-width="2"/>
+  <text x="130" y="275" fill="#f59e0b" font-family="system-ui, sans-serif" font-size="15" font-weight="700">🦍 Kong: DATA VALIDATION (free)</text>
+  
+  <circle cx="130" y="302" r="3" fill="#94a3b8"/>
+  <text x="145" y="307" fill="#e2e8f0" font-family="system-ui, sans-serif" font-size="13">"Is this response complete?"</text>
+  
+  <circle cx="130" y="327" r="3" fill="#94a3b8"/>
+  <text x="145" y="332" fill="#e2e8f0" font-family="system-ui, sans-serif" font-size="13">"Did we get all 12 quarters?"</text>
+  
+  <circle cx="130" y="352" r="3" fill="#94a3b8"/>
+  <text x="145" y="357" fill="#e2e8f0" font-family="system-ui, sans-serif" font-size="13">Catches collection failures</text>
+
+  <!-- LLM HERE label -->
+  <text x="560" y="295" fill="#f59e0b" font-family="system-ui, sans-serif" font-size="12" font-weight="600">← LLM HERE</text>
+
+  <!-- Arrow down from Kong validation -->
+  <path d="M 320 375 L 320 405" stroke="#22c55e" stroke-width="2" fill="none"/>
+  <polygon points="320,415 315,405 325,405" fill="#22c55e"/>
+  
+  <!-- Verified data label -->
+  <text x="340" y="400" fill="#22c55e" font-family="system-ui, sans-serif" font-size="12" font-weight="500">(verified REAL data)</text>
+
+  <!-- PHASE 2 -->
+  <text x="60" y="450" fill="#94a3b8" font-family="system-ui, sans-serif" font-size="13" font-weight="600" letter-spacing="0.05em">PHASE 2: INTELLIGENT ANALYSIS</text>
+  <text x="320" y="450" fill="#64748b" font-family="system-ui, sans-serif" font-size="13">(Claude — expensive)</text>
+
+  <!-- Claude Analysis Box -->
+  <rect x="100" y="470" width="440" height="120" rx="10" fill="url(#claudeGrad)"/>
+  <text x="130" y="500" fill="#f8fafc" font-family="system-ui, sans-serif" font-size="14" font-weight="600">Pattern recognition on VERIFIED data</text>
+  
+  <circle cx="130" y="525" r="3" fill="#ddd6fe"/>
+  <text x="145" y="530" fill="#f1f5f9" font-family="system-ui, sans-serif" font-size="13">Cannot invent inputs (they're real)</text>
+  
+  <circle cx="130" y="550" r="3" fill="#ddd6fe"/>
+  <text x="145" y="555" fill="#f1f5f9" font-family="system-ui, sans-serif" font-size="13">Does what LLMs are good at</text>
+  
+  <text x="130" y="578" fill="#ddd6fe" font-family="system-ui, sans-serif" font-size="13">→ Scores, patterns, conclusions</text>
+
+  <!-- Arrow down from Claude -->
+  <path d="M 320 590 L 320 620" stroke="#8b5cf6" stroke-width="2" fill="none"/>
+  <polygon points="320,630 315,620 325,620" fill="#8b5cf6"/>
+
+  <!-- Kong Adversarial Box -->
+  <rect x="100" y="645" width="440" height="140" rx="10" fill="#1e293b" stroke="#f59e0b" stroke-width="2"/>
+  <text x="130" y="678" fill="#f59e0b" font-family="system-ui, sans-serif" font-size="15" font-weight="700">🦍 Kong: ADVERSARIAL VALIDATION (free)</text>
+  
+  <circle cx="130" y="705" r="3" fill="#94a3b8"/>
+  <text x="145" y="710" fill="#e2e8f0" font-family="system-ui, sans-serif" font-size="13">"Did you USE all the data I gave you?"</text>
+  
+  <circle cx="130" y="730" r="3" fill="#94a3b8"/>
+  <text x="145" y="735" fill="#e2e8f0" font-family="system-ui, sans-serif" font-size="13">"Your score doesn't match evidence"</text>
+  
+  <circle cx="130" y="755" r="3" fill="#94a3b8"/>
+  <text x="145" y="760" fill="#e2e8f0" font-family="system-ui, sans-serif" font-size="13">"What would change your conclusion?"</text>
+
+  <!-- LLM HERE label -->
+  <text x="560" y="695" fill="#f59e0b" font-family="system-ui, sans-serif" font-size="12" font-weight="600">← LLM HERE</text>
+
+  <!-- Arrow down to Phase 3 -->
+  <path d="M 320 785 L 320 810" stroke="#22c55e" stroke-width="2" fill="none"/>
+  <polygon points="320,820 315,810 325,810" fill="#22c55e"/>
+
+  <!-- PHASE 3 -->
+  <text x="60" y="850" fill="#94a3b8" font-family="system-ui, sans-serif" font-size="13" font-weight="600" letter-spacing="0.05em">PHASE 3: TARGETED RERUN</text>
+  <text x="275" y="850" fill="#22c55e" font-family="system-ui, sans-serif" font-size="13" font-weight="500">(only ~15% failures)</text>
+
+  <!-- Rerun summary -->
+  <text x="60" y="878" fill="#e2e8f0" font-family="system-ui, sans-serif" font-size="13">Only low-confidence items reanalyzed • Missing data added • Adversarial questions addressed</text>
+  <text x="60" y="896" fill="#22c55e" font-family="system-ui, sans-serif" font-size="13" font-weight="600">Cost: 85% less than rerunning all</text>
+
+</svg>
